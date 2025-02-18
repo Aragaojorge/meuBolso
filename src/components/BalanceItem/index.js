@@ -6,17 +6,17 @@ export default function BalanceItem({data}) {
         if(data.tag === 'saldo') {
             return{
                 label: 'Saldo Atual',
-                color: '#4CAF50'
+                color: '#2196F3'
             }
         } else if(data.tag === 'receita') {
             return{
                 label: 'Receitas',
-                color: '#6200EE'
+                color: '#66BB6A'
             }
         } else {
             return{
                 label: 'Despesas',
-                color: '#F44336'
+                color: '#EF5350'
             }
         }
     }, [data])

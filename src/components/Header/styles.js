@@ -7,7 +7,7 @@ export const Container = styled.SafeAreaView`
     margin-top: 30px;
     margin-left: 15px;
     margin-bottom: 15px;
-    widht: 100%;
+    width: 100%;
     max-height: 60px;
 `;
 export const Title = styled.Text`
