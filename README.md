@@ -21,7 +21,7 @@ Esse projeto foi desenvolvido com React-Native.
 - SQLite: SQL Database engine
 - VSCode: Ambiente de desenvolvimento integrado recomendado para este projeto.
 
-## Bibliotecas e módulos utilizados:
+## Bibliotecas e módulos utilizados
 
 - React e React Native (para construção do aplicativo):
   npm install react react-native
@@ -44,8 +44,9 @@ Esse projeto foi desenvolvido com React-Native.
 - expo: plataforma open source para desenvolvimento de aplicativos nativos, tanto para Android quanto IOS:
   1 - para criar o aplicativo: npx create-expo-app@latest
   2 - iniciar o servidor de desenvolvimento: npx expo start
+- Expo Go: para execução do app em smartphones
 
-## Para executar o projeto:
+## Para executar o projeto
 
 - Instalar as dependências no diretório do backend, disponível no repositório de mesmo nome:
   npm install
