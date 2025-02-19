@@ -23,15 +23,17 @@ export default function Home() {
     useEffect(() => {
         let isActive = true;
         async function getMoviments() {
-            let dateFormated = format(dateMoviments, 'dd/MM/yyyy');
+            let date = new Date(dateMoviments);
+            let onlyDate = date.valueOf() + date.getTimezoneOffset() * 60 * 1000;
+            let dateFormatted = format(onlyDate, 'dd/MM/yyyy')
             const receives = await api.get('/receives', {
                 params: {
-                    date: dateFormated
+                    date: dateFormatted
                 }
             })
             const balance = await api.get('balance', {
                 params:{
-                    date: dateFormated
+                    date: dateFormatted
                 }
             })
             if(isActive) {
@@ -54,6 +56,11 @@ export default function Home() {
         } catch(err) {
             console.log(err)
         }
+    }
+
+    function filterDateMovements(dateSelected) {
+        console.log(dateSelected);
+        setDateMovements(dateSelected);
     }
 
     return(
@@ -80,7 +87,10 @@ export default function Home() {
                 contentContainerStyle={{paddingBottom:20}}
             />
             <Modal visible={modalVisible} animationType='fade' transparent={true}>
-                <CalendarModal setVisible = {() => setModalVisible(false)} />
+                <CalendarModal 
+                    setVisible = {() => setModalVisible(false)}
+                    handleFilter = {filterDateMovements}
+                />
             </Modal>
         </Background>
     )
